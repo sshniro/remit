@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remit One</title>
+</head>
+<body>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery(".snd-amount").mouseover( function() {
+            alert('Click me!');
+        });
+    });
+</script>
+
+<style>
+    .col-calculator{
+        /*width: 80%;*/
+        box-sizing: border-box;
+        position: relative;
+        float: right;
+        background-clip: content-box;
+        min-height: 1px;
+        padding-left: 0px;
+        padding-right: 0px;
+        color: rgb(51, 51, 51);
+        font-size: 14px; background-color: rgba(255, 255, 255, 0.61);
+    }
+    .div-calculator{
+        box-sizing: border-box;
+        /*max-width: 460px;*/
+        min-height: 200px;
+        float: right;
+        font-stretch: normal;
+        font-size: 12pt;
+        line-height: normal;
+        font-family: Roboto, sans-serif;
+    }
+    .tgc-calculator{
+        box-sizing: border-box;
+        font-feature-settings: 'kern' 1, 'liga' 1, 'pnum' 1;
+        font-size: 15px;
+        line-height: 1.6;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
+        margin: auto;
+        position: relative; color: rgb(33, 54, 71);
+    }
+    .tgc-calculator-select{
+        box-sizing: border-box;
+        width: 424px;
+        position: relative;
+    }
+    .calculator-content{
+        box-sizing: border-box;
+        padding: 20px 18px 15px;
+    }
+    .calculator-select-block{
+        box-sizing: border-box;
+        margin-bottom: 12px;
+    }
+    .select-block-label{
+        box-sizing: border-box;
+        margin-bottom: -20px;
+        color: rgb(95, 100, 115);
+        font-size: 13px;
+    }
+    .calculator-country-select-wrapper{
+        box-sizing: border-box; width: 212px; float: left; padding-right: 15px;
+    }
+    .calculator-select-block{
+        box-sizing: border-box; margin-bottom: 12px;
+    }
+    .tgc-calculator-submit{
+        box-sizing: border-box;
+        background-color: transparent;
+        width: auto;
+        float: none;
+        font-family: Roboto, sans-serif;
+        color: rgb(53, 131, 238);
+    }
+    .send-money-box{
+        box-sizing: border-box;
+        letter-spacing: 1px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(37, 215, 66);
+        border-radius: 0px 0px 3px 3px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .q-to-currency-selector{
+        box-sizing: border-box; position: absolute; top: 1px; right: 1px;
+        padding: 12px 14px 12px 10px; font-size: 16px; color: rgb(95, 100, 115);
+        pointer-events: none;
+    }
+    .q-calculator-to-amount-select{
+        color: rgb(63, 126, 217) !important;
+        font-style: inherit;
+        font-variant: inherit;
+        font-stretch: inherit;
+        font-size: 18px;
+        font-family: inherit;
+        margin: 0px;
+        border-radius: 0px;
+        width: 212px;
+        padding: 14px 56px 14px 14px !important;
+        text-align: right;
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: rgb(197, 215, 227) !important;
+        transition: all 0.12s ease-in !important;
+        height: inherit;
+        -webkit-appearance: none;
+    }
+    .q-to-country{
+        color: rgb(33, 54, 71) !important;
+        font-style: inherit !important;
+        font-variant: inherit !important;
+        font-stretch: inherit !important;
+        font-size: 15px !important;
+        font-family: inherit !important;
+        margin: 0px  !important;
+        float: left !important;
+        width: 197px !important;
+        padding: 24px 24px 8px 30px  !important;
+        background: url(https://www.transfergo.com/images/LV@2x.png) left bottom 9px / 23px 17px no-repeat !important;
+        border-radius: 0px !important;
+        border-width: 0px 0px 1px !important;
+        border-top-style: initial  !important;
+        border-right-style: initial !important;
+        border-left-style: initial !important;
+        border-bottom-style: solid !important;
+        border-bottom-color: rgb(197, 215, 227) !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        transition: all 0.12s ease-in !important;
+        height: inherit !important;
+        -webkit-appearance: none !important;
+    }
+    .q-from-country{
+        color: rgb(33, 54, 71) !important;
+        font-style: inherit !important;
+        font-variant: inherit !important;
+        font-stretch: inherit !important;
+        font-size: 15px !important;
+        font-family: inherit !important;
+        margin: 0px !important;
+        float: left !important;
+        width: 197px !important;
+        padding: 24px 24px 8px 30px !important;
+        background: url(https://www.transfergo.com/images/GB@2x.png) left bottom 9px / 23px 17px no-repeat !important;
+        border-radius: 0px !important;
+        border-width: 0px 0px 1px !important;
+        border-top-style: initial !important;
+        border-right-style: initial !important;
+        border-left-style: initial !important;
+        border-bottom-style: solid !important;
+        border-bottom-color: rgb(197, 215, 227) !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        transition: all 0.12s ease-in !important;
+        height: inherit !important;
+        -webkit-appearance: none !important;
+    }
+</style>
+
+
+<div class="col-calculator">
+    <div class="div-calculator">
+        <div data-reactroot="" style="box-sizing: border-box;">
+            <div style="box-sizing: border-box;">
+                <div class="tgc-calculator">
+                    <div class="calculator-content">
+                        <div class="calculator-select-block">
+                            <div class="select-block-label">
+                                <font style="box-sizing: border-box; vertical-align: inherit;">Sending from</font>
+                            </div>
+                            <div class="tgc-calculator-select">
+                                <div class="calculator-country-select-wrapper">
+                                    <input type="text" class="q-from-country" placeholder="United Kingdom" value="United Kingdom">
+                                </div>
+                                <input type="tel" id="snd-amount" class="tgc-calculator-select-amount q-calculator-from-amount-select"
+                                       autocomplete="off" value="500.00"
+                                       style="color: rgb(63, 126, 217); font-style: inherit; font-variant: inherit;
+                                       font-stretch: inherit; font-size: 18px; font-family: inherit; margin: 0px;
+                                       border-radius: 0px; width: 212px; display: block; padding: 14px 56px 14px 14px;
+                                       text-align: right; border-width: 1px; border-style: solid; border-color: rgb(197, 215, 227);
+                                       transition: all 0.12s ease-in; height: inherit; -webkit-appearance: none;">
+                                <span class="calculator-select-currency q-from-currency-selector"
+                                      style="box-sizing: border-box; position: absolute; top: 1px; right: 1px;
+                                      padding: 12px 14px 12px 10px; font-size: 16px; color: rgb(95, 100, 115);
+                                      pointer-events: none;">
+                                    <font style="box-sizing: border-box; vertical-align: inherit;">GBP</font>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="calculator-select-block">
+                            <div class="select-block-label">
+                                <font style="box-sizing: border-box; vertical-align: inherit;">Gets in</font>
+                            </div>
+                            <div class="tgc-calculator-select">
+                                <div class="calculator-country-select-wrapper">
+                                    <input type="text" class="q-to-country" placeholder="Philippines" value="Philippines">
+                                </div>
+                                <input type="tel" id="rcv-amount" class="q-calculator-to-amount-select" value="548.76">
+                                <span class="q-to-currency-selector">
+                                    <font style="box-sizing: border-box; vertical-align: inherit;">PHP</font>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="tgc-calculator-submit">
+                        <div class="send-money-box">
+                            <font style="box-sizing: border-box; vertical-align: inherit;">SEND MONEY</font>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
