@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
+import {Router, Route} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {history} from '../_helpers';
+import {PrivateRoute} from '../_components';
 
-import { userActions } from '../_actions';
+import {LoginPage} from '../LoginPage/loginPage';
+import {RegisterPage} from '../RegisterPage/registerPage';
+import {userActions} from '../_actions';
+import {NavLink} from 'react-router-dom';
+
+import addTranscation from './addTransaction';
+
+var PagePic = addTranscation;
+
 
 class HomePage extends React.Component {
     componentDidMount() {
@@ -14,7 +25,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-        const { user, users } = this.props;
+        const {user, users} = this.props;
         return (
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
@@ -29,7 +40,8 @@ class HomePage extends React.Component {
                             {user.firstName + ' ' + user.lastName}
                             {
                                 user.deleting ? <em> - Deleting...</em>
-                                    : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
+                                    : user.deleteError ?
+                                    <span className="text-danger"> - ERROR: {user.deleteError}</span>
                                     : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
                             }
                         </li>
@@ -45,8 +57,8 @@ class HomePage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
+    const {users, authentication} = state;
+    const {user} = authentication;
     return {
         user,
         users
@@ -54,4 +66,4 @@ function mapStateToProps(state) {
 }
 
 const connectedHomePage = connect(mapStateToProps)(HomePage);
-export { connectedHomePage as HomePage };
+export {connectedHomePage as HomePage};
